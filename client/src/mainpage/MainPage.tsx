@@ -1,9 +1,9 @@
-import AddReport from "./AddReport"
-import Map from "../map/Map"
-import ReportDetails from "./ReportDetails"
-import ReportInterface from "./ReportInterface"
-import ReportsList from "./ReportsList"
-import {useEffect, useState} from "react";
+import AddReport from "./AddReport";
+import Map from "../map/Map";
+import ReportDetails from "./ReportDetails";
+import ReportInterface from "./ReportInterface";
+import ReportsList from "./ReportsList";
+import { useEffect, useState } from "react";
 
 
 

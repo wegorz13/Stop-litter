@@ -12,9 +12,9 @@ export default function ReportsList({ reports }: { reports: ReportInterface[] })
     if (category === "date") {
       sorted.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     }
-    // } else if (category === "bumps") {
-    //   sorted.sort((a, b) => b.bumps - a.bumps);
-    // }
+    if (category === "bumps") {
+      sorted.sort((a, b) => b.likes - a.likes);
+    }
 
     setSortedReports(sorted);
   }

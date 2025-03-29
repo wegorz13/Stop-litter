@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Form() {
-  const [body, setBody] = useState("");
+  const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [location, setAddress] = useState("");
@@ -9,13 +9,13 @@ function Form() {
   const likes = 0;
 
   const correctComment = () => {
-    if (body.length == 0 || location.length == 0) {
+    if (description.length == 0 || location.length == 0) {
       alert("You have to add an address and a description.");
     } else {
       postReport();
     }
 
-    setBody("");
+    setDescription("");
     setTitle("");
     setDate("");
     setAddress("");
@@ -43,9 +43,9 @@ function Form() {
       body: JSON.stringify({
         title,
         location,
-        likes,
+        likes: 0,
         date,
-        body,
+        description,
         image: imageData || null,
       }),
     })
@@ -75,9 +75,9 @@ function Form() {
         />
         <p>Description</p>
         <textarea
-          value={body}
+          value={description}
           onChange={(e) => {
-            setBody(e.target.value);
+            setDescription(e.target.value);
           }}
         />
         <p>Address</p>
