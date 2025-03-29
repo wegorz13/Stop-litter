@@ -1,0 +1,27 @@
+.popup_div {
+  max-width: 250px; /* Set maximum width for popup */
+  padding: 10px;
+}
+
+.popup_descr {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.popup_descr img {
+  max-width: 100%;
+  max-height: 150px; /* Limit image height */
+  object-fit: contain; /* Maintain aspect ratio */
+  border-radius: 4px;
+}
+
+.popup_descr p {
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-height: 100px;
+  overflow-y: auto; /* Add scroll if text is too long */
+  padding: 4px;
+}
