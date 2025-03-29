@@ -19,16 +19,16 @@ function MainPage(){
 
   const krakowReports: ReportInterface[] = reports;
 
-  console.log("reportsy: ",reports);
+  console.log("reportsy: ",krakowReports);
 
   return(
 
       <div>
-        <div className="container-upper">
+          <div> Nazwa apki </div>
+        <div>
           <Map/>
           <div>
             <AddReport/>
-            {krakowReports?.[0] && <ReportDetails report={krakowReports?.[0]}/>}
           </div>
         </div>
         <ReportsList reports={krakowReports}/>

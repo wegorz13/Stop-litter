@@ -22,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/form" element={<Form />} />
+        {/*<Route path ="/>chart" element=/>}/>*/}
       </Routes>
     </BrowserRouter>
   );

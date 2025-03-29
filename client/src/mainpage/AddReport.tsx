@@ -10,7 +10,7 @@ export default function AddReport() {
     return (
         <div className="text-center">
             <button className="btn btn-secondary p-4 m-5 fs-4" onClick={goToLink}>
-                    Dodaj formularz
+                    Add report
             </button>
         </div>
     );
