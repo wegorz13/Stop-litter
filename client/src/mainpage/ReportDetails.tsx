@@ -1,5 +1,4 @@
 import ReportInterface from "./ReportInterface";
-import "./reportdetails.css"
 export default function ReportDetails({ report }: { report: ReportInterface }){
     return (
         <div className="report-card">
