@@ -1,0 +1,5 @@
+.container-upper{
+  display: flex;
+  gap: 16px;
+  margin: 2rem;
+}

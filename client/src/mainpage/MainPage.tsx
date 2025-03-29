@@ -3,7 +3,7 @@ import Map from "./Map"
 import ReportDetails from "./ReportDetails"
 import ReportInterface from "./ReportInterface"
 import ReportsList from "./ReportsList"
-  
+import "./mainpage.css"
   const krakowReports: ReportInterface[] = [
     {
       title: "Uszkodzona nawierzchnia na ul. Dietla",
@@ -79,7 +79,7 @@ import ReportsList from "./ReportsList"
 export default function MainPage(){
 
     return <div>
-        <div>
+        <div className="container-upper">
             <Map/>
             <div>
                 <AddReport/>

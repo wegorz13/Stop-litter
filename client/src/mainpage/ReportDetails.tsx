@@ -1,8 +1,8 @@
 import ReportInterface from "./ReportInterface";
-
+import "./reportdetails.css"
 export default function ReportDetails({ report }: { report: ReportInterface }){
     return (
-        <div>
+        <div className="report-card">
             <img src="src/assets/smieci-1.png" alt="Logo" height="100px" width="100px" />
             <div>
                 <h1>{report.title}</h1>
