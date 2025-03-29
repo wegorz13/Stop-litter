@@ -81,6 +81,9 @@ app.get("/api", (req: Request, res: Response) => {
 
 app.post("/api/report", async (req: Request, res: Response) => {
   const { title, location, date, description, image } = req.body;
+  console.log(title);
+  console.log(location);
+
   if (!title || !location) {
     res.status(401).json({ message: "title and location required" });
     return;
