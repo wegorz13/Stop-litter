@@ -37,7 +37,7 @@ export const BarChart = ()=>{
             }
         }
     };
-    return     <div style={{ width: '600px', height: '400px' }}>
+    return     <div style={{ width: '800px', height: '400px' }}>
         <Bar options={options} data={incidentsPerCityData}/>
         </div>
 }

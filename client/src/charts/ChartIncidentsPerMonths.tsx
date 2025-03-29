@@ -37,5 +37,5 @@ export const LineGraph = ()=>{
             }
         }
     };
-    return (<div style={{ width: '600px', height: '400px' }}><Line options={options} data={incidentsPerMonthData}/></div>)
+    return (<div style={{ width: '800px', height: '400px' }}><Line options={options} data={incidentsPerMonthData}/></div>)
 }
