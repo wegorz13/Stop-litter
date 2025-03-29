@@ -15,6 +15,9 @@ const sequelize = new Sequelize({
   storage: "./database.db",
 });
 
+function dodaj(){
+  
+}
 const connectDB = async () => {
   try {
     await sequelize.authenticate();
@@ -138,6 +141,24 @@ app.get("/api/report/:id", async (req: Request, res: Response) => {
   }
 });
 
+app.put("/api/report/:id", async (req: Request, res: Response) => {
+  const id = parseInt(req.params.id);
+  try {
+    const report = await Report.findOne({ where: { id: id } });
+    if (report == null) {
+      res.status(404).json({ message: "Report not found" });
+      return;
+    }
+    await report.update({ likes: report.likes + 1 });
+    res.status(201).json(report);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(500).json({ error: "Failed to update report", details: error.message });
+    } else {
+      res.status(500).json({ error: "Failed to update report", details: "Unknown error" });
+    }
+  }
+});
 connectDB();
 
 app.listen(port, () => {

@@ -1,10 +1,32 @@
+import { useEffect } from "react";
 import ReportInterface from "./ReportInterface";
 
 
 export default function Report({ report }: { report: ReportInterface }) {
-  function addLike(): void {
-    throw new Error("Function not implemented.");
+async function addLike() {
+
+  try {
+    const response = await fetch(`http://localhost:5000/api/report/${report.id}`, {
+      method: 'PUT', 
+      headers: {
+        'Content-Type': 'application/json', 
+      },
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      console.error('Error:', error.message);
+      alert(`Error: ${error.message}`);
+      return;
+    }
+    const updatedReport = await response.json();
+    console.log('Updated Report:', updatedReport);
+  } catch (error) {
+    console.error('Request failed', error);
+    alert('Request failed. Please try again later.');
   }
+}
+
 
   return (
     <div className="px-4 py-4">
@@ -23,7 +45,7 @@ export default function Report({ report }: { report: ReportInterface }) {
               <h2 className="fs-5">{report.location}</h2>
             </div>
             <div className="col">
-              <h3>5</h3>
+              <h3>{report.likes}</h3>
               <button className="btn btn-success fs-3" onClick={()=> addLike()}>Bump</button>
             </div>
           </div>

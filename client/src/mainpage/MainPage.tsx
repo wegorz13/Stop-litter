@@ -18,13 +18,14 @@ function MainPage() {
 
   console.log("reportsy: ", reports);
 
-  return (
-    <div>
-      <div className="container-upper">
+  return(
+
+      <div>
+        <div className="container-upper">
         <Map reports={reports} />
-        <div>
-          <AddReport />
-          {krakowReports?.[0] && <ReportDetails report={krakowReports?.[0]} />}
+          <div>
+            <AddReport/>
+          </div>
         </div>
       </div>
       <ReportsList reports={krakowReports} />
