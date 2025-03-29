@@ -1,7 +1,16 @@
-import {useEffect } from "react";
-import "./App.css";
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import React from "react";
+
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+
 import axios from "axios";
-import Form from "./mainpage/form.tsx";
+import MainPage from "./mainpage/MainPage";
+import Form from "./form/form";
+
 
 function App() {
 
@@ -15,9 +24,13 @@ function App() {
   });
 
   return (
-    <>
-     <Form/>
-    </>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/form" element={<Form/>}/>
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 
