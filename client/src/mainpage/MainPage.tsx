@@ -28,7 +28,6 @@ function MainPage(){
           <Map/>
           <div>
             <AddReport/>
-            {krakowReports?.[0] && <ReportDetails report={krakowReports?.[0]}/>}
           </div>
         </div>
         <ReportsList reports={krakowReports}/>
