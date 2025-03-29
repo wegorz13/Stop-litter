@@ -86,8 +86,6 @@ app.get("/api", (req: Request, res: Response) => {
 
 app.post("/api/report", async (req: Request, res: Response) => {
   const { title, location,likes, date, description, image } = req.body;
-  console.log(image);
-
   if (!title || !location ||likes==null) {
     res.status(401).json({ message: "title, likes and location required" });
     return;

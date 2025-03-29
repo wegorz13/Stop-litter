@@ -6,6 +6,7 @@ function Form() {
   const [date, setDate] = useState("");
   const [location, setAddress] = useState("");
   const [queryImage, setQueryImage] = useState<string | null>(null);
+  const likes = 0;
 
   const correctComment = () => {
     if (body.length == 0 || location.length == 0) {
@@ -42,6 +43,7 @@ function Form() {
       body: JSON.stringify({
         title,
         location,
+        likes,
         date,
         body,
         image: imageData || null,

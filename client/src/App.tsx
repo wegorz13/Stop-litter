@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import axios from "axios";
 import MainPage from "./mainpage/MainPage";
-import Form from "./form/form";
+import Form from "./mainpage/form";
 
 function App() {
   const fetchAPI = async () => {
