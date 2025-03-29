@@ -2,6 +2,7 @@ import {useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import Form from "./mainpage/form.tsx";
+import MainPage from "./mainpage/MainPage.tsx";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
      <Form/>
+      <MainPage/>
     </>
   );
 }

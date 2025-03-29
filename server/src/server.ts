@@ -30,6 +30,7 @@ class Report extends Model {
   public id!: number;
   public title!: string;
   public location!: string;
+  public likes!:number;
   public date?: string;
   public description?: string;
   public image?: Buffer;
@@ -48,6 +49,10 @@ Report.init(
     location: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    likes: {
+      type: DataTypes.INTEGER,
+      allowNull :false,
     },
     date: {
       type: DataTypes.STRING,
@@ -80,18 +85,18 @@ app.get("/api", (req: Request, res: Response) => {
 });
 
 app.post("/api/report", async (req: Request, res: Response) => {
-  const { title, location, date, description, image } = req.body;
-  console.log(title);
-  console.log(location);
+  const { title, location,likes, date, description, image } = req.body;
+  console.log(image);
 
-  if (!title || !location) {
-    res.status(401).json({ message: "title and location required" });
+  if (!title || !location ||likes==null) {
+    res.status(401).json({ message: "title, likes and location required" });
     return;
   }
   try {
     const newReport = await Report.create({
       title: title,
       location: location,
+      likes: likes,
       date: date,
       description: description,
       image: image,

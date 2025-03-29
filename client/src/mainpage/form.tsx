@@ -6,6 +6,7 @@ function Form(){
     const [title, setTitle] = useState("")
     const [date, setDate] = useState("");
     const [location, setAddress] = useState("");
+    const [likes,setLikes]=useState(0);
     const [queryImage, setQueryImage] = useState<string | null>(null);
 
     const correctComment=()=>{
@@ -13,13 +14,14 @@ function Form(){
             alert("You have to add an address and a description.");
         }
         else{
+            setLikes(0);
             postReport();
         }
 
-        setBody("");
-        setTitle("");
-        setDate("");
-        setAddress("");
+        setBody("a");
+        setTitle("a");
+        setDate("a");
+        setAddress("a");
     }
 
 
@@ -41,7 +43,13 @@ function Form(){
         fetch("http://localhost:5000/api/report", {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({title,location,date,body,queryImage})
+            body: JSON.stringify({
+                title,
+                location,
+                likes,
+                date,
+                body,
+                queryImage})
         })
             .then(res => res.json())
             .then(data => {
@@ -68,7 +76,7 @@ function Form(){
                 <textarea value={body} onChange={(e) => {
                     setBody(e.target.value);
                 }}/>
-                <p>Address</p>
+                <p>Location</p>
                 <input value={location} onChange={(e) => {
                     setAddress(e.target.value);
                 }}/>

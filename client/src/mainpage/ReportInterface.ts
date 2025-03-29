@@ -1,7 +1,8 @@
 export default interface ReportInterface { 
   title: string, 
-  description: string, 
-  address: string, 
-  photo_url: string,
-  date: string 
+  location: string,
+  likes: number,
+  date: string,
+  body: string,
+  queryImage: string
 }

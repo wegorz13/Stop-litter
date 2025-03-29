@@ -7,8 +7,8 @@ export default function ReportDetails({ report }: { report: ReportInterface }){
             <div>
                 <h1>{report.title}</h1>
                 <h2>{report.date}</h2>
-                <h2>{report.address}</h2>
-                <h2>{report.description}</h2>
+                <h2>{report.location}</h2>
+                <h2>{report.body}</h2>
             </div>
         </div>
     );
