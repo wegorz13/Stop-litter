@@ -30,10 +30,10 @@ class Report extends Model {
   public id!: number;
   public title!: string;
   public location!: string;
-  public likes!:number;
+  public likes!: number;
   public date?: string;
   public description?: string;
-  public image?: Buffer;
+  public image?: string;
 }
 Report.init(
   {
@@ -52,7 +52,7 @@ Report.init(
     },
     likes: {
       type: DataTypes.INTEGER,
-      allowNull :false,
+      allowNull: false,
     },
     date: {
       type: DataTypes.STRING,
@@ -61,7 +61,7 @@ Report.init(
       type: DataTypes.STRING,
     },
     image: {
-      type: DataTypes.BLOB,
+      type: DataTypes.TEXT,
     },
   },
   {
@@ -85,23 +85,29 @@ app.get("/api", (req: Request, res: Response) => {
 });
 
 app.post("/api/report", async (req: Request, res: Response) => {
-  const { title, location,likes, date, description, image } = req.body;
-  if (!title || !location ||likes==null) {
-    res.status(401).json({ message: "title, likes and location required" });
-    return;
-  }
   try {
+    const { title, location, likes, date, description, image } = req.body;
+
+    if (!title || !location || likes == null) {
+      res
+        .status(400)
+        .json({ message: "Title, likes, and location are required" });
+      return;
+    }
+
     const newReport = await Report.create({
-      title: title,
-      location: location,
-      likes: likes,
-      date: date,
-      description: description,
-      image: image,
+      title,
+      location,
+      likes,
+      date: date || new Date().toISOString(),
+      description,
+      image,
     });
+
     res.status(201).json(newReport);
-  } catch {
-    res.status(500).json({ error: "Failed to create report", details: Error });
+  } catch (error) {
+    console.error("Error creating report:", error);
+    res.status(500).json({ error: "Failed to create report" });
   }
 });
 
