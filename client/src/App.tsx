@@ -1,7 +1,7 @@
 import {useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import Form from "./Form/form.tsx";
+import Form from "./mainpage/form.tsx";
 
 function App() {
 
