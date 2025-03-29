@@ -4,17 +4,10 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./map.css";
 import trash from "./trash_backup.png";
+import '../mainpage/ReportInterface'
+import ReportInterface from "../mainpage/ReportInterface";
 
-interface Report {
-  id: number;
-  title: string;
-  location: string;
-  date: string;
-  description: string | null;
-  image: string | null;
-}
-
-export default function Map(props: { reports: Report[] }) {
+export default function Map(props: { reports: ReportInterface[] }) {
   const reports = props.reports;
   console.log("map reports", reports);
 

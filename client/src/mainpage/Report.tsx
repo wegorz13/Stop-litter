@@ -32,7 +32,11 @@ async function addLike() {
     <div className="px-4 py-4">
       <div className="row border">
         <div className="col-5 px-0">
-          <img src="src/assets/smieci-1.png" alt="Logo" width="100%" />
+          <img src={
+          report.image && report.image !== "null"
+            ? `data:image/jpeg;base64,${report.image}`
+            : "src/assets/smieci-1.png"
+        } alt="Logo" width="100%" />
         </div>
         <div className="col-7 text-center d-flex flex-column justify-content-between">
           <div>

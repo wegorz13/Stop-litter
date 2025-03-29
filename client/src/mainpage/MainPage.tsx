@@ -6,7 +6,7 @@ import ReportsList from "./ReportsList";
 import { useEffect, useState } from "react";
 
 function MainPage() {
-  const [reports, setReports] = useState([]);
+  const [reports, setReports] = useState<ReportInterface[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/report")
@@ -14,22 +14,19 @@ function MainPage() {
       .then((data) => setReports(data));
   }, []);
 
-  const krakowReports: ReportInterface[] = reports;
-
   console.log("reportsy: ", reports);
 
-  return(
-
-      <div>
-        <div className="container-upper">
+  return (
+    <div>
+      <div className="container-upper">
         <Map reports={reports} />
-          <div>
-            <AddReport/>
-          </div>
+        <div>
+          <AddReport />
         </div>
       </div>
-      <ReportsList reports={krakowReports} />
+      <ReportsList reports={reports} />
     </div>
   );
 }
+
 export default MainPage;
