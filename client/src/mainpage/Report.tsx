@@ -16,11 +16,11 @@ export default function Report({ report }: { report: ReportInterface }) {
           <div>
             <h2 className="text-start text-secondary">{report.date}</h2>
             <h1 className="f">{report.title}</h1>
-            <h2 className="fs-2 text-start fw-normal mt-3">{report.description}</h2>
+            <h2 className="fs-2 text-start fw-normal mt-3">{report.body}</h2>
           </div>
           <div className="mt-auto row">
             <div className="col mt-auto">
-              <h2 className="fs-5">{report.address}</h2>
+              <h2 className="fs-5">{report.location}</h2>
             </div>
             <div className="col">
               <h3>5</h3>

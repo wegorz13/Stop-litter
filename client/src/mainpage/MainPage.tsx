@@ -1,9 +1,8 @@
 import AddReport from "./AddReport"
-import Map from "./Map"
+import Map from "../map/Map"
 import ReportDetails from "./ReportDetails"
 import ReportInterface from "./ReportInterface"
 import ReportsList from "./ReportsList"
-import "./mainpage.css"
 import {useEffect, useState} from "react";
 
 
