@@ -6,6 +6,7 @@ function Form() {
   const [date, setDate] = useState("");
   const [location, setAddress] = useState("");
   const [queryImage, setQueryImage] = useState<string | null>(null);
+  const likes = 0;
 
   const correctComment = () => {
     if (description.length == 0 || location.length == 0) {
