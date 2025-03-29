@@ -11,8 +11,8 @@ import axios from "axios";
 import MainPage from "./mainpage/MainPage";
 import Form from "./form/form";
 
+
 function App() {
-  const [count, setCount] = useState(0);
 
   const fetchAPI = async () => {
     const response = await axios.get("http://localhost:5000/api");
@@ -30,7 +30,6 @@ function App() {
           <Route path="/form" element={<Form/>}/>
       </Routes>
     </BrowserRouter>
-
 
   );
 }
