@@ -12,12 +12,10 @@ app.use(express.json());
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: "./database.db",
+  storage: "../database.db",
 });
 
-function dodaj(){
-  
-}
+function dodaj() {}
 const connectDB = async () => {
   try {
     await sequelize.authenticate();
@@ -153,9 +151,13 @@ app.put("/api/report/:id", async (req: Request, res: Response) => {
     res.status(201).json(report);
   } catch (error: unknown) {
     if (error instanceof Error) {
-      res.status(500).json({ error: "Failed to update report", details: error.message });
+      res
+        .status(500)
+        .json({ error: "Failed to update report", details: error.message });
     } else {
-      res.status(500).json({ error: "Failed to update report", details: "Unknown error" });
+      res
+        .status(500)
+        .json({ error: "Failed to update report", details: "Unknown error" });
     }
   }
 });
