@@ -2,7 +2,7 @@
 
 It's a website created to keep our planet cleaner. The citizens can send reports of litter incidents, and the data is then presented in various forms to help address the issue by, for example, sending charity workers to these locations.
 
-Technologies used:
+### Technologies used:
 
 - TypeScript
 - React
@@ -10,6 +10,14 @@ Technologies used:
 - Leaflet
 - SQLite
 - Bootstrap
+- Charts.js
+
+#### Contributors:
+
+[Filip Węgrzyn](https://github.com/wegorz13)  
+[Natalia Czajak](https://github.com/nczajak)  
+[Seweryn Tasior](https://github.com/Sewery)  
+[Filip Mokrzycki](https://github.com/Filipmok-agh)
 
 This is the map with marked locations.
 
