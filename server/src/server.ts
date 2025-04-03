@@ -15,7 +15,6 @@ const sequelize = new Sequelize({
   storage: "../database.db",
 });
 
-function dodaj() {}
 const connectDB = async () => {
   try {
     await sequelize.authenticate();
@@ -71,15 +70,6 @@ Report.init(
   }
 );
 sequelize.sync();
-
-const test = async () => {
-  const tst = await Report.create({
-    title: "Śmieci w lesie",
-    location: "Krakow",
-    date: "now",
-  });
-  console.log(tst.title);
-};
 
 app.get("/api", (req: Request, res: Response) => {
   res.json({ message: "siemka" });

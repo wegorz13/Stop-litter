@@ -1,4 +1,8 @@
 .fcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   max-width: 500px;
   margin: 30px auto;
   padding: 20px;
@@ -15,7 +19,8 @@
 
 .fp {
   font-weight: bold;
-  margin: 10px 0 5px;
+  margin: 10px;
+  width: 100%;
 }
 
 .finput,
@@ -26,6 +31,9 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .ftextarea {
@@ -46,7 +54,7 @@
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .fbutton:hover {
@@ -59,4 +67,16 @@
   height: auto;
   margin-top: 10px;
   border-radius: 5px;
+}
+
+.coords {
+  display: flex;
+}
+
+.finput[type="file"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
 }

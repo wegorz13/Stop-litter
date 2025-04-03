@@ -36,8 +36,9 @@ export default function ReportsList({
   }, []);
 
   return (
-    <>
-      <div className="text-center fs-2">
+    <div className="mt-5">
+      <div className="text-center fs-2 d-flex justify-content-center align-items-center ">
+        <h3 className="m-2">Sort by</h3>
         <select
           className="text-center"
           value={category}
@@ -54,6 +55,6 @@ export default function ReportsList({
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }

@@ -1,9 +1,9 @@
 export default interface ReportInterface {
-  id:number,
+  id: number;
   title: string;
   location: string;
   likes: number;
   date: string;
-  body: string;
+  description: string;
   image: string;
 }

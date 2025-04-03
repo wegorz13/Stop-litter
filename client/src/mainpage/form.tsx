@@ -1,14 +1,15 @@
 import { useState } from "react";
 import "./form.css";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function Form() {
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
-  const [location, setAddress] = useState("");
+  const [lat, setLat] = useState("");
+  const [lng, setLng] = useState("");
   const [queryImage, setQueryImage] = useState<string | null>(null);
-  const likes = 0;
 
   const navigate = useNavigate();
 
@@ -16,7 +17,7 @@ function Form() {
     navigate("/");
   };
   const correctComment = () => {
-    if (description.length == 0 || location.length == 0) {
+    if (description.length == 0 || lat.length == 0 || lng.length == 0) {
       alert("You have to add an address and a description.");
     } else {
       postReport();
@@ -26,7 +27,8 @@ function Form() {
     setDescription("");
     setTitle("");
     setDate("");
-    setAddress("");
+    setLat("");
+    setLng("");
   };
 
   const setImagePath = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,7 +52,7 @@ function Form() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         title,
-        location,
+        location: lat.concat(" ", lng),
         likes: 0,
         date,
         description,
@@ -64,40 +66,55 @@ function Form() {
   };
 
   return (
-    <div className="fcontainer">
-      <h2 className="fh2">Add a report</h2>
-      <div>
-        <p className="fp">Title</p>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} />
+    <div>
+      <Navbar></Navbar>
+      <div className="fcontainer">
+        <h2 className="fh2">Add a report</h2>
+        <div>
+          <p className="fp">Title</p>
+          <input
+            className="finput"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
-        <p className="fp">Date</p>
-        <input
-          value={date}
-          type="date"
-          onChange={(e) => setDate(e.target.value)}
-        />
+          <p className="fp">Date</p>
+          <input
+            value={date}
+            type="date"
+            onChange={(e) => setDate(e.target.value)}
+          />
 
-        <p className="fp">Description</p>
-        <textarea
-          className="ftextarea"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+          <p className="fp">Description</p>
+          <textarea
+            className="ftextarea"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
 
-        <p className="fp">Address</p>
-        <input
-          className="finput"
-          value={location}
-          onChange={(e) => setAddress(e.target.value)}
-        />
+          <div className="coords">
+            <p className="fp">Latitude</p>
+            <input
+              className="finput"
+              value={lat}
+              onChange={(e) => setLat(e.target.value)}
+            />
+            <p className="fp">Longitude</p>
+            <input
+              className="finput"
+              value={lng}
+              onChange={(e) => setLng(e.target.value)}
+            />
+          </div>
 
-        <p className="fp">Photo</p>
-        <input className="finput" type="file" onChange={setImagePath} />
-        {queryImage && <img src={queryImage} alt="Preview" />}
+          <p className="fp">Photo</p>
+          <input className="finput" type="file" onChange={setImagePath} />
+          {queryImage && <img src={queryImage} alt="Preview" />}
 
-        <button className="fbutton" onClick={correctComment}>
-          Add an opinion
-        </button>
+          <button className="fbutton" onClick={correctComment}>
+            Send
+          </button>
+        </div>
       </div>
     </div>
   );
