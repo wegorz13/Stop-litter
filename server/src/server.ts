@@ -1,8 +1,11 @@
 import express, { Request, Response, Application } from "express";
 import { Sequelize, DataTypes, Model, where } from "sequelize";
+const bodyParser = require('body-parser');
 const app: Application = express();
 const port = 5000;
 const cors = require("cors");
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 const corsOptions = {
   origin: ["http://localhost:5173"],
