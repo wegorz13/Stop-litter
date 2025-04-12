@@ -51,7 +51,7 @@ export default function ReportsList({
       </div>
       <div className="row align-items-start">
         {sortedReports.map((report, index) => (
-          <div key={index} className="col-6">
+          <div key={index} className="col-lg-6">
             <Report report={report} />
           </div>
         ))}
