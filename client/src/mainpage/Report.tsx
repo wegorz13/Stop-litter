@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import ReportInterface from "./ReportInterface";
-import './report.css'
+import './report.css';
 
 export default function Report({ report }: { report: ReportInterface }) {
+  const [likes, setLikes] = useState(report.likes);
+
   async function addLike() {
     try {
       const response = await fetch(
@@ -22,6 +24,8 @@ export default function Report({ report }: { report: ReportInterface }) {
       }
       const updatedReport = await response.json();
       console.log("Updated Report:", updatedReport);
+
+      setLikes(updatedReport.likes);
     } catch (error) {
       console.error("Request failed", error);
       alert("Request failed. Please try again later.");
@@ -55,10 +59,10 @@ export default function Report({ report }: { report: ReportInterface }) {
                 <h6 className="text-muted fs-5">{report.date}</h6>
               </div>
               <div className="d-flex flex-column align-items-center">
-                <div className="fs-1 text-center mb-2 text-dark  ">
-                  {report.likes}
+                <div className="fs-1 text-center mb-2 text-dark">
+                  {likes}
                 </div>
-                <button className="btn btn-success fs-3" onClick={() => addLike()}>
+                <button className="btn btn-success fs-3" onClick={addLike}>
                   Bump
                 </button>
               </div>
