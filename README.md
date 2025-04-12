@@ -34,3 +34,12 @@ Users can bump the images to highlight important issues.
 The data can be presented in charts.
 
 ![alt text](./images/charts.png)
+
+Website is fully responsive and can be used on phones/tablets
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <img src="./images/phone-map.png" alt="Map on phone">
+    <img src="./images/phone-bumps.png" alt="Bumps on phone">
+</div>
+
+
