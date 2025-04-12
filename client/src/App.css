@@ -1,5 +1,4 @@
 #root {
-  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   padding-top: 0;
@@ -13,25 +12,11 @@
   padding: 0;
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #2e7d32;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: "Arial", sans-serif;
-  padding: 10px;
-  border-bottom: 3px solid #1b5e20;
-  background: linear-gradient(to right, #a5d6a7, #e8f5e9);
-  border-radius: 5px;
-}
-
 .container-upper {
   display: flex;
-  justify-content: center; /* Wycentrowanie poziome */
-  align-items: center; /* Wycentrowanie pionowe (opcjonalnie) */
-  flex-direction: column; /* Jeśli chcesz, żeby przyciski były pod mapą */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: auto;
 }
@@ -39,17 +24,17 @@
 .leaflet-container {
   height: 70vh;
   width: 100%;
-  border: 2px solid #2e7d32; /* Opcjonalna ramka dla wyróżnienia */
+  border: 2px solid #2e7d32;
 }
-/* tu sie konczy css mapy */
 
 .logo {
   font-size: 30px;
   margin: 5px;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .link:hover {
-  background-color: #8cb88e;
-  transition: 0.3s ease;
+  color: #2ad333 !important;
+  text-shadow: 0 0 2px #2ad333, 0 0 2px #2ad333;
 }
