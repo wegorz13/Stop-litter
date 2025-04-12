@@ -28,7 +28,7 @@ export const LineGraph = () => {
       },
       title: {
         display: true,
-        text: "Wykres najbardziej zaśmieconych miast",
+        text: "Wykres liczby zgłoszeń dla Krakowa",
       },
     },
     scales: {
