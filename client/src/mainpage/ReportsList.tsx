@@ -32,8 +32,9 @@ export default function ReportsList({
     sortReports(category);
   };
   useEffect(() => {
-    sortReports("date");
-  }, []);
+    sortReports(category);
+  }, [reports]);
+  
 
   return (
     <div className="mt-5">
