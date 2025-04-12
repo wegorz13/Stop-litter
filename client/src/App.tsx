@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import axios from "axios";
 import MainPage from "./mainpage/MainPage";
-import Form from "./mainpage/form";
+import Form from "./form/form";
 import Charts from "./charts/Charts";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/form" element={<Form />} />
-        <Route path="/charts" element ={<Charts/>}/>
+        <Route path="/charts" element={<Charts />} />
       </Routes>
     </BrowserRouter>
   );
