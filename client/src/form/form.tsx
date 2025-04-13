@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import "./form.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../mainpage/Navbar";
@@ -12,6 +12,14 @@ function Form() {
   const [queryImage, setQueryImage] = useState<string | null>(null);
 
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLat(String(position.coords.latitude))
+      setLng(String(position.coords.longitude))
+    });
+  },[])
+
 
   const goToLink = () => {
     navigate("/");
@@ -120,3 +128,4 @@ function Form() {
   );
 }
 export default Form;
+
