@@ -1,45 +1,63 @@
 # stop-litter
 
-It's a website created to keep our planet cleaner. The citizens can send reports of litter incidents, and the data is then presented in various forms to help address the issue by, for example, sending charity workers to these locations.
+**stop-litter** is an interactive platform designed to streamline the reporting and monitoring of environmental littering. Users can easily submit reports by selecting a location on the map, providing details, and attaching a photo. The data is then visualized on both a map and charts, enabling NGOs and volunteers to quickly respond and plan clean-up actions.
 
-### Technologies used:
+## Contributors:
+- **[Filip Węgrzyn](https://github.com/wegorz13)**
+- **[Natalia Czajak](https://github.com/nczajak)**
+- **[Seweryn Tasior](https://github.com/Sewery)**
+- **[Filip Mokrzycki](https://github.com/Filipmok-agh)**
 
-- TypeScript
-- React
-- Express
-- Leaflet
-- SQLite
-- Bootstrap
-- Charts.js
 
-#### Contributors:
+## Technologies Used
+- **Frontend**: React, TypeScript, Bootstrap  
+- **Mapping**: Leaflet  
+- **Backend**: Express  
+- **Database**: SQLite  
+- **Charts**: Chart.js  
 
-[Filip Węgrzyn](https://github.com/wegorz13)  
-[Natalia Czajak](https://github.com/nczajak)  
-[Seweryn Tasior](https://github.com/Sewery)  
-[Filip Mokrzycki](https://github.com/Filipmok-agh)
+---
 
-This is the map with marked locations.
+## Features
 
-![alt text](./images/map.png)
+### 1. Navigation Bar
+- Allows smooth navigation across the application.  
+- Links to essential sections such as the home page, contribute and charts
 
-The reports include location, date, description and image.
+### 2. Map of Reports
+- Leaflet map with all reported locations marked.  
+- Clicking a pin opens a popup with the report’s title, description, photo, and date.
 
-![alt text](./images/form.png)
+![Map of Reports](./images/map.png)
 
-Users can bump the images to highlight important issues.
+### 3. Report Submission
+- Form collects all key information:  
+  - **Title** of the incident  
+  - **Description**  
+  - **Date**
+  - **Photo**  
+  - **Location**, automatically fetched from the user’s device  
 
-![alt text](./images/bumps.png)
+![Report Form](./images/form.png)
 
-The data can be presented in charts.
+### 4. Home page
+- On the Home page, reports can be sorted by:  
+  - Date  
+  - Number of “bumps” (votes for report importance)  
+- Users can click a “bump” to increase a report’s priority.
 
-![alt text](./images/charts.png)
+![Bumps](./images/bumps.png)
 
-Website is fully responsive and can be used on phones/tablets
+### 5. Charts and Statistics
+- Interactive charts display report data.  
+- Helps analyze trends over time and hotspots by location.
 
-<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <img src="./images/phone-map.png" alt="Map on phone">
-    <img src="./images/phone-bumps.png" alt="Bumps on phone">
+![Charts](./images/charts.png)
+
+### 6. Responsiveness
+- Fully responsive design for desktops, tablets, and smartphones.  
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="./images/phone-map.png" alt="Map on mobile" width="500" style="margin-bottom: 8px;">
+  <img src="./images/phone-bumps.png" alt="Bumps on mobile" width="500">
 </div>
-
-
